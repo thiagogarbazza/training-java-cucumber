@@ -3,6 +3,16 @@
 Funcionalidade: Nome da funcionalidade a ser testada.
   Uma descrição para a funcionalidade. Esta descrição é sempre ignorada.
 
+  Cenário: Um título qualquer para o cenário.
+    Dado escreva aqui os dados "algum dado 01" e "mais outro dado 01" de entrada para a ação.
+    Quando escreva aqui a ação que desejamos executar.
+    Então escreva aqui o "resultado esperado 01" esperado ao executar a ação.
+
+  Cenário: Um título qualquer para o cenário.
+    Dado escreva aqui os dados "algum dado 02" e "mais outro dado 02" de entrada para a ação.
+    Quando escreva aqui a ação que desejamos executar.
+    Então escreva aqui o "resultado esperado 02" esperado ao executar a ação.
+
   Esquema do Cenário: Um título qualquer para o cenário.
     Dado escreva aqui os dados "<dado-1>" e "<dado-2>" de entrada para a ação.
     Quando escreva aqui a ação que desejamos executar.
