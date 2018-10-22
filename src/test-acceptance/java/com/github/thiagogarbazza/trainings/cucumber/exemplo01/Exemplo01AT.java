@@ -5,6 +5,6 @@ import cucumber.api.junit.Cucumber;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "classpath:com/github/thiagogarbazza/trainings/cucumber/exemplo01/Exemplo02AT.feature")
+@CucumberOptions(features = "classpath:com/github/thiagogarbazza/trainings/cucumber/exemplo01/Exemplo01AT.feature")
 public class Exemplo01AT {
 }
