@@ -1,4 +1,4 @@
-package com.github.thiagogarbazza.trainings.cucumber.exemplo01;
+package com.github.thiagogarbazza.trainings.cucumber.exemplo05;
 
 import com.github.thiagogarbazza.trainings.cucumber.CalendarioService;
 import cucumber.api.java.Before;
@@ -10,10 +10,10 @@ import org.apache.commons.lang3.BooleanUtils;
 import java.time.LocalDate;
 
 import static com.github.thiagogarbazza.trainings.cucumber.CalendarioService.getCalendarioService;
+import static com.github.thiagogarbazza.trainings.cucumber.LocalDateUtil.toLocalDate;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
 
-public class Exemplo01Step {
+public class Exemplo05Step {
 
   private CalendarioService calendarioService = getCalendarioService();
   private LocalDate data;
@@ -24,7 +24,11 @@ public class Exemplo01Step {
     data = null;
     eFeriado = null;
     CalendarioService.FERIADOS.clear();
-    CalendarioService.FERIADOS.add(LocalDate.of(2018, 1, 1));
+  }
+
+  @Dado("^considerando que o dia \"([^\"]*)\" é feriado\\.$")
+  public void contextoConsiderandoQueODiaÉFeriado(String arg0) {
+    CalendarioService.FERIADOS.add(toLocalDate(arg0));
   }
 
   @Dado("^o dia (\\d+)/(\\d+)/(\\d+)\\.$")
