@@ -1,4 +1,4 @@
-package com.github.thiagogarbazza.trainings.cucumber.calendario;
+package com.github.thiagogarbazza.trainings.cucumber.dominio.integracao.calendario;
 
 import java.time.LocalDate;
 
