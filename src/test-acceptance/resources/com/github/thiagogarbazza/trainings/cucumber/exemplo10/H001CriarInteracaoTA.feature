@@ -19,6 +19,7 @@ Funcionalidade: Criar interações para o sistema em desenvolvimento.
       | 2  | EDD     | 15/10/2018  | 19/10/2018 | Spring 001 |
       | 3  | EDD     | 22/10/2018  | 26/10/2018 | Spring 002 |
 
+  @Ignore # seguranca ainda não implementada
   Cenário: 01. Não permitir que um usuário não autorizado execute a ação.
     Dado que o usuário "Zoraide Silva" esta logado no sistema.
     E selecionou o sistema "EDD".
@@ -98,4 +99,6 @@ Funcionalidade: Criar interações para o sistema em desenvolvimento.
     E informou a data de fim "09/11/2018".
     E informou o nome da interação "Spring 003".
     Quando clicar no botão salvar.
-    Então o sistema responde que "Interação cadastrada com sucesso.".
+    Então o sistema responde que a interação foi cadastrada com sucesso.
+      | id | Sistema | Data início | Data fim   | Nome       |
+      | 4  | EDD     | 29/10/2018  | 09/11/2018 | Sprint 003 |

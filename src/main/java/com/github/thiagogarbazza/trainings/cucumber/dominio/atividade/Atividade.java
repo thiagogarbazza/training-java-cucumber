@@ -29,4 +29,7 @@ public class Atividade extends AbstractDominio {
 
   @Column(name = "nome")
   private String nome;
+
+  @Column(name = "storyPoints")
+  private Integer storyPoints;
 }

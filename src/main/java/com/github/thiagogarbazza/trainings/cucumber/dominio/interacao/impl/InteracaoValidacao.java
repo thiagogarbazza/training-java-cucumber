@@ -1,19 +1,35 @@
 package com.github.thiagogarbazza.trainings.cucumber.dominio.interacao.impl;
 
+import com.github.thiagogarbazza.trainings.cucumber.dominio.atividade.Atividade;
+import com.github.thiagogarbazza.trainings.cucumber.dominio.atividade.AtividadePesquisaService;
 import com.github.thiagogarbazza.trainings.cucumber.dominio.integracao.calendario.CalendarioAdapter;
 import com.github.thiagogarbazza.trainings.cucumber.dominio.interacao.Interacao;
+import com.github.thiagogarbazza.trainings.cucumber.dominio.interacao.InteracaoFiltro;
 import com.github.thiagogarbazza.trainings.cucumber.dominio.util.ValidationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.Collection;
+
 import static com.github.thiagogarbazza.trainings.cucumber.dominio.sistema.SituacaoSistema.ATIVO;
+import static org.apache.commons.collections4.CollectionUtils.isNotEmpty;
 import static org.apache.commons.lang3.StringUtils.isBlank;
 
 @Component
 class InteracaoValidacao {
 
   @Autowired
+  private AtividadePesquisaService atividadePesquisaService;
+  @Autowired
   private CalendarioAdapter calendarioAdapter;
+
+  public void aoAlterar(final Interacao interacao) {
+    dataInicioDeveSerInformada(interacao);
+    dataFimDeveSerInformada(interacao);
+    dataInicioDeveSerDiaUtil(interacao);
+    dataFimDeveSerDiaUtil(interacao);
+    nomeDeveSerInformado(interacao);
+  }
 
   public void aoCriar(Interacao interacao) {
     sistemaDeveSerInformado(interacao);
@@ -23,6 +39,19 @@ class InteracaoValidacao {
     dataInicioDeveSerDiaUtil(interacao);
     dataFimDeveSerDiaUtil(interacao);
     nomeDeveSerInformado(interacao);
+  }
+
+  public void aoExcluir(final Interacao interacao) {
+    final Collection<Atividade> atividades = atividadePesquisaService.pesquisar(interacao);
+    if (isNotEmpty(atividades)) {
+      throw new ValidationException("Não é permitido excluir interação que contenha atividade.");
+    }
+  }
+
+  public void aoPesquisar(final InteracaoFiltro filtro) {
+    if (isBlank(filtro.getNome()) && filtro.getSistema() == null) {
+      throw new ValidationException("Deve ser utilizado ao menos 1 filtro.");
+    }
   }
 
   private void dataFimDeveSerDiaUtil(final Interacao interacao) {
