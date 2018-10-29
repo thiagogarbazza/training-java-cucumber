@@ -13,7 +13,7 @@ Funcionalidade: Criar interações para o sistema em desenvolvimento.
       | id | Sigla | Nome                    | Situação |
       | 1  | EDD   | Editor de documentos    | Ativo    |
       | 2  | SDN   | Sistema de notificações | Inativo  |
-    E que as interações abaixo estão cadastrados:
+    E que as interações abaixo estão cadastradas:
       | id | Sistema | Data início | Data fim   | Nome       |
       | 1  | SDN     | 22/10/2018  | 26/10/2018 | Spring 001 |
       | 2  | EDD     | 15/10/2018  | 19/10/2018 | Spring 001 |
@@ -91,17 +91,8 @@ Funcionalidade: Criar interações para o sistema em desenvolvimento.
     Quando clicar no botão salvar.
     Então o sistema responde que "O nome deve ser informado.".
 
-  Cenário: 09. O nome da interação deve ser único por sistema.
-    Dado que o usuário "Thiago Garbazza" esta logado no sistema..
-    E selecionou o sistema "EDD".
-    E informou a data de início "29/10/2018".
-    E informou a data de fim "09/11/2018".
-    E informou o nome da interação "Spring 001".
-    Quando clicar no botão salvar.
-    Então o sistema responde que "O nome deve ser único para o sistema.".
-
-  Cenário: 10. Realizar um cadastro com sucesso.
-    Dado que o usuário "Thiago Garbazza" esta logado no sistema..
+  Cenário: 09. Realizar um cadastro com sucesso.
+    Dado que o usuário "Thiago Garbazza" esta logado no sistema.
     E selecionou o sistema "EDD".
     E informou a data de início "29/10/2018".
     E informou a data de fim "09/11/2018".

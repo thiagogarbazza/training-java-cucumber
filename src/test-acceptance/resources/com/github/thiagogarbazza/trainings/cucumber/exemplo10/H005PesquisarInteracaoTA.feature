@@ -13,7 +13,7 @@ Funcionalidade: Pesquisar interações para o sistema em desenvolvimento.
       | id | Sigla | Nome                    | Situação |
       | 1  | EDD   | Editor de documentos    | Ativo    |
       | 2  | SDN   | Sistema de notificações | Inativo  |
-    E que as interações abaixo estão cadastrados:
+    E que as interações abaixo estão cadastradas:
       | id | Sistema | Data início | Data fim   | Nome       |
       | 1  | SDN     | 22/10/2018  | 26/10/2018 | Spring 001 |
       | 2  | EDD     | 15/10/2018  | 19/10/2018 | Spring 001 |
@@ -32,15 +32,15 @@ Funcionalidade: Pesquisar interações para o sistema em desenvolvimento.
 
   Cenário: 02. Realizar pesquisa.
     Dado que o usuário "Thiago Garbazza" esta logado no sistema.
-    E selecionou o sistema "".
-    E selecionou o nome "".
+    E selecionou o filtro sistema "".
+    E informou o filtro nome "".
     Quando clicar no botão excluir.
     Então o sistema responde que "Deve ser utilizado ao menos 1 filtro".
 
   Cenário: 03. Realizar pesquisa informando o sistema.
     Dado que o usuário "Thiago Garbazza" esta logado no sistema.
-    E selecionou o sistema "EDD".
-    E selecionou o nome "".
+    E selecionou o filtro sistema "EDD".
+    E informou o filtro nome "".
     Quando clicar no botão excluir.
     Então o sistema as interações abaixo:
       | id | Sistema | Data início | Data fim   | Nome       | Atividades |
@@ -49,16 +49,16 @@ Funcionalidade: Pesquisar interações para o sistema em desenvolvimento.
 
   Cenário: 04. Realizar pesquisa informando um nome que não existe na base.
     Dado que o usuário "Thiago Garbazza" esta logado no sistema.
-    E selecionou o sistema "".
-    E selecionou o nome "Teste".
+    E selecionou o filtro sistema "".
+    E informou o filtro nome "Teste".
     Quando clicar no botão excluir.
     Então o sistema as interações abaixo:
       | id | Sistema | Data início | Data fim | Nome | Atividades |
 
   Cenário: 05. Realizar pesquisa informando uma parte do nome.
     Dado que o usuário "Thiago Garbazza" esta logado no sistema.
-    E selecionou o sistema "".
-    E selecionou o nome "001".
+    E selecionou o filtro sistema "".
+    E informou o filtro nome "001".
     Quando clicar no botão excluir.
     Então o sistema as interações abaixo:
       | id | Sistema | Data início | Data fim   | Nome       | Atividades |

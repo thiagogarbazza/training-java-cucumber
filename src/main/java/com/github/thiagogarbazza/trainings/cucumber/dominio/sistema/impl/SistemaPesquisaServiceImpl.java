@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.Collection;
 
 @Service
-public class SistemaPesquisaServiceImpl implements SistemaPesquisaService {
+class SistemaPesquisaServiceImpl implements SistemaPesquisaService {
 
   @Autowired
   private SistemaRepository repository;

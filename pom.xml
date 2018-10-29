@@ -25,7 +25,7 @@
     <dependency.commons-collections4.version>4.2</dependency.commons-collections4.version>
     <dependency.commons-lang3.version>3.8</dependency.commons-lang3.version>
     <dependency.commons-logging.version>1.2</dependency.commons-logging.version>
-    <dependency.cucumber.version>4.0.0</dependency.cucumber.version>
+    <dependency.cucumber.version>4.1.1</dependency.cucumber.version>
     <dependency.junit.version>4.12</dependency.junit.version>
     <dependency.lombok.version>1.18.2</dependency.lombok.version>
     <dependency.mockito-core.version>2.23.0</dependency.mockito-core.version>
@@ -64,7 +64,16 @@
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-security</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-test</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -96,6 +105,13 @@
       <version>${dependency.cucumber.version}</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-spring</artifactId>
+      <version>${dependency.cucumber.version}</version>
+      <scope>test</scope>
+    </dependency>
+
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>

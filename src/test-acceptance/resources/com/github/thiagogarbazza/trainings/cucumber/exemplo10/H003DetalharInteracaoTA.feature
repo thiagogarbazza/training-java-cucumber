@@ -7,7 +7,7 @@ Funcionalidade: Detalhar interações para o sistema em desenvolvimento.
       | id | Sigla | Nome                    | Situação |
       | 1  | EDD   | Editor de documentos    | Ativo    |
       | 2  | SDN   | Sistema de notificações | Inativo  |
-    E que as interações abaixo estão cadastrados:
+    E que as interações abaixo estão cadastradas:
       | id | Sistema | Data início | Data fim   | Nome       |
       | 1  | SDN     | 22/10/2018  | 26/10/2018 | Spring 001 |
       | 2  | EDD     | 15/10/2018  | 19/10/2018 | Spring 001 |
